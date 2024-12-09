@@ -24,6 +24,14 @@
   margin: 0;
 }
 
+.decoration {
+  position: fixed;
+  inset: 0;
+  top: 60%;
+  background-color: hsl(195deg, 20%, 86%);
+
+} 
+
 .characterWrapper {
   position: fixed;
   left: 60%;
@@ -34,4 +42,6 @@
 
 .controlColumn {
   max-width: 50%;
+  /* Avoid .decoration overlap */
+  isolation: isolate;
 }
