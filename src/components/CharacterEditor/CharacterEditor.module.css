@@ -9,6 +9,7 @@
 .header {
   max-width: 65%;
   padding-bottom: 64px;
+  isolation: isolate;
 }
 
 .title {
@@ -44,4 +45,28 @@
   max-width: 50%;
   /* Avoid .decoration overlap */
   isolation: isolate;
+}
+
+@media screen and (max-width: 500px) {
+  .header, .controlColumn {
+    max-width: initial;
+  }
+  .controlColumn {
+   white-space: nowrap;
+   overflow: auto;
+   position: sticky;
+   bottom: 10%;
+  }
+  .controlColumn > * {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: initial;
+  }
+  .controlColumn > *:last-child {
+    margin-right: 0;
+  }
+  .characterWrapper {
+    position: static;
+    isolation: isolate;
+  }
 }
